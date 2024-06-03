@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="website icon" type="png" href="https://cdn2.iconfinder.com/data/icons/ios7-inspired-mac-icon-set/512/Calculator_512.png">
+</head>
+<body>
+    <img class="bg" type="jpg" src="./images/background.jpg">
+    <!--REST BELOW-->
+
+
+
+
+    <div class="container">
+        <div class="calculator">
+            <form>
+                <div class="display">
+                    <input readonly name="display" type="text">
+                </div>
+                <div>
+                    <input class="operator" type="button" value="AC" onclick="display.value = ''" >
+                    <input class="operator" type="button" value="DE" onclick="display.value = display.value.toString().slice(0,-1)">
+                    <input class="operator" type="button" value="." onclick="display.value += '.'">
+                    <input class="operator" type="button" value="÷" onclick="display.value += '/'">
+                <div> 
+                    <input type="button" value="7" onclick="display.value += '7' ">
+                    <input type="button" value="8" onclick="display.value += '8' ">
+                    <input type="button" value="9" onclick="display.value += '9' ">
+                    <input type="button" value="x" onclick="display.value += '*' " class="operator">
+                </div> 
+                <div>
+                    <input type="button" value="4" onclick="display.value += '4' ">
+                    <input type="button" value="5" onclick="display.value += '5' ">
+                    <input type="button" value="6" onclick="display.value += '6' ">
+                    <input type="button" value="-" onclick="display.value += '-' " class="operator">
+                </div> 
+                <div> 
+                    <input type="button" value="1" onclick="display.value += '1' ">
+                    <input type="button" value="2" onclick="display.value += '2' ">
+                    <input type="button" value="3" onclick="display.value += '3' ">
+                    <input type="button" value="+" onclick="display.value += '+' " class="operator">
+                </div>
+                <div>
+                    <input type="button" value="𝜋" onclick="display.value += '3.14' ">
+                    <input type="button" value="0" onclick="display.value += '0' ">
+                    <input class="equal operator" type="button" value="=" onclick="display.value = eval(display.value)">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function changesize(){
+            var screenWidth = window.innerWidth;
+            var cont = document.querySelector(".container");
+            if (screenWidth < 700){
+                cont.style.width = '100%';
+                cont.style.top = '20px';
+                cont.style.left = '50%';
+                cont.style.transform = 'translateX(-50%)';
+            }else{
+                cont.style.width = '';
+                cont.style.top = '';
+                cont.style.left = '';
+                cont.style.transform = '';
+            }
+        }
+        window.addEventListener("resize", changesize);
+        window.addEventListener("load", changesize);
+    </script>
+</body>
+</html>
